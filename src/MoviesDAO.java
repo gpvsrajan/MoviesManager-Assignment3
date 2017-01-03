@@ -48,5 +48,45 @@ public class MoviesDAO {
 		  return allmovies;
 		
 	}
+
+	public static Movies fetchById(Long id) {
+		// TODO Auto-generated method stub
+		  Session session = sessionFactory.openSession();
+
+		  session.beginTransaction();
+
+		  Movies movie=(Movies) session.get(Movies.class,id);
+
+		  session.getTransaction().commit();
+		  session.close();
+		return movie;
+	}
+
+	public static List<Movies>  findMovieByTitle(String title) {
+		 Session session = sessionFactory.openSession();
+
+		  session.beginTransaction();
+		 
+		  Query query=session.getNamedQuery("findMovieByTitle");
+		  query.setString("title",title);  
+		  query.setCacheable(true);
+		  List<Movies>  allmovies=query.list();
+		  session.getTransaction().commit();
+		  session.close();
+		  return allmovies;
+	
+	}
+
+	public static void update(Movies movies) {
+		// TODO Auto-generated method stub
+		 Session session = sessionFactory.openSession();
+
+		  session.beginTransaction();
+
+		  session.update(movies);
+
+		  session.getTransaction().commit();
+		  session.close();
+	}
 	
 }
