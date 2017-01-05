@@ -1,6 +1,6 @@
 # MoviesManager-Assignment3
 
-Created A Simple java-hibernate Standalone application for store 'Movie wish list'
+Created A Simple java-hibernate Stand-alone application for store 'Movie wish list'
 Movie wish list is simple CURD project where you do the following options:-
 
 1.  Insert new movie.
@@ -11,8 +11,8 @@ Movie wish list is simple CURD project where you do the following options:-
 
  
  Implemented:-
-- Used Query level cahce .
-- Create HibernateUtil class to create singleton sesssionfactory pattern
+- Used Query level cache .
+- Create HibernateUtil class to create singleton session-factory pattern
 - Create DAO layer pattern structure.
-- Used Namedquery.
+- Used Named-query.
  
